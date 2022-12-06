@@ -24,6 +24,7 @@ function App() {
 
       const loadedMovies = [];
 
+      //To covert object to array so that we can access object with map method
       for (const key in data) {
         loadedMovies.push({
           id: key,
@@ -46,6 +47,7 @@ function App() {
 
   async function addMovieHandler(movie) {
     const response = await fetch('https://react-http-b60f0-default-rtdb.firebaseio.com/movies.json', {
+      /*default it it get method*/
       method: 'POST',
       body: JSON.stringify(movie),
       headers: {
